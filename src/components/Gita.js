@@ -5,49 +5,6 @@ import Persons from '../persons.json';
 
 
 class Gita extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-        labels: null,
-        datasets: null
-    }
-  }
-  componentDidMount(){
-    this.setState({
-      labels: [Persons[0].Persons_faces_coordinates[0].Person_id],
-      datasets: [
-        {
-          label: 'Area Of Person',
-          backgroundColor: 'rgba(255,99,132,0.2)',
-          borderColor: 'rgba(255,99,132,1)',
-          borderWidth: 1,
-          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-          hoverBorderColor: 'rgba(255,99,132,1)',
-          data: []
-        }
-      ]
-  });
-
-  }
   
-  
-    
-      render()
-  {
-    const {mydata} =this.setState;
-    return (
-            <div>
-            <h2>Vertical Bar Example</h2>
-            <Bar
-              data={mydata}
-              width={100}
-              height={200}
-              options={{
-                maintainAspectRatio: false
-              }}
-            />
-          </div>
-    );
-            }
-          };
+};
 export default Gita;

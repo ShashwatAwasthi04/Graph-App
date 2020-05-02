@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Persons from '../persons.json';
 
 const mydata = {
-    labels: [Persons[0].Persons_faces_coordinates[0].Person_id],
+    labels: [Persons[0].Persons_faces_coordinates[0].Person_id,Persons[1].Persons_faces_coordinates[0].Person_id,Persons[2].Persons_faces_coordinates[0].Person_id,Persons[3].Persons_faces_coordinates[0].Person_id,Persons[4].Persons_faces_coordinates[0].Person_id],
     datasets: [
       {
         label: 'Area Of Person',
@@ -13,7 +13,17 @@ const mydata = {
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: [Persons[0].Persons_faces_coordinates[0].coordinates.x_min]
+        data: [(Persons[0].Persons_faces_coordinates[0].coordinates.x_max-Persons[0].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[0].Persons_faces_coordinates[0].coordinates.y_max-Persons[0].Persons_faces_coordinates[0].coordinates.y_min),(Persons[1].Persons_faces_coordinates[0].coordinates.x_max-Persons[1].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[1].Persons_faces_coordinates[0].coordinates.y_max-Persons[1].Persons_faces_coordinates[0].coordinates.y_min),(Persons[2].Persons_faces_coordinates[0].coordinates.x_max-Persons[2].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[2].Persons_faces_coordinates[0].coordinates.y_max-Persons[2].Persons_faces_coordinates[0].coordinates.y_min),(Persons[3].Persons_faces_coordinates[0].coordinates.x_max-Persons[3].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[3].Persons_faces_coordinates[0].coordinates.y_max-Persons[3].Persons_faces_coordinates[0].coordinates.y_min),(Persons[4].Persons_faces_coordinates[0].coordinates.x_max-Persons[4].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[4].Persons_faces_coordinates[0].coordinates.y_max-Persons[4].Persons_faces_coordinates[0].coordinates.y_min)]
+      },
+      {
+        label: 'Square root of Area Of Person',
+        backgroundColor: 'rgba(0,0,255,0.3)',
+        borderColor: 'rgba(255,99,132,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        data: [Math.sqrt((Persons[0].Persons_faces_coordinates[0].coordinates.x_max-Persons[0].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[0].Persons_faces_coordinates[0].coordinates.y_max-Persons[0].Persons_faces_coordinates[0].coordinates.y_min)),Math.sqrt((Persons[1].Persons_faces_coordinates[0].coordinates.x_max-Persons[1].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[1].Persons_faces_coordinates[0].coordinates.y_max-Persons[1].Persons_faces_coordinates[0].coordinates.y_min)),Math.sqrt((Persons[2].Persons_faces_coordinates[0].coordinates.x_max-Persons[2].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[2].Persons_faces_coordinates[0].coordinates.y_max-Persons[2].Persons_faces_coordinates[0].coordinates.y_min)),Math.sqrt((Persons[3].Persons_faces_coordinates[0].coordinates.x_max-Persons[3].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[3].Persons_faces_coordinates[0].coordinates.y_max-Persons[3].Persons_faces_coordinates[0].coordinates.y_min)),Math.sqrt((Persons[4].Persons_faces_coordinates[0].coordinates.x_max-Persons[4].Persons_faces_coordinates[0].coordinates.x_min)*(Persons[4].Persons_faces_coordinates[0].coordinates.y_max-Persons[4].Persons_faces_coordinates[0].coordinates.y_min))]
+
       }
     ]
     
