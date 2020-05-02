@@ -1,32 +1,39 @@
 import React, { Fragment } from 'react';
-import {Helmet} from 'react-helmet';
+import {Bar} from 'react-chartjs-2';
 import {Link} from 'react-router-dom';
+import Persons from '../persons.json';
 
+const mydata = {
+    labels: [Persons[0].Persons_faces_coordinates[0].Person_id],
+    datasets: [
+      {
+        label: 'Area Of Person',
+        backgroundColor: 'rgba(255,99,132,0.2)',
+        borderColor: 'rgba(255,99,132,1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        data: [Persons[0].Persons_faces_coordinates[0].coordinates.x_min]
+      }
+    ]
+    
+  };
+  const Person =() =>
+  (
+   
+  
+    
+        <div>
+          <h2>Bar Graph Example</h2>
+          <Bar
+            data={mydata}
+            width={100}
+            height={200}
+            options={{
+              maintainAspectRatio: false
+            }}
+          />
+        </div>
+  );
 
-const PersonData =() =>
-    (
-        <Fragment>
-            <Helmet><title>Pictuinary Quiz-Home</title></Helmet>
-            <div id="home">
-            <section>
-                <div style={{textAlign:'center'}}>
-                    <span className="mdi mdi-cube-outline cube"></span>
-                </div>
-                <h2>Quiz App</h2>
-                <div className="play-button-container">
-                    <ul>
-                        <li><Link className="play-button" to="/play/instructions">Set to Go</Link></li>
-                    </ul>
-                </div>
-                <div className="auth-container">
-                    <Link to="/login" className="auth-buttons" id="log">Login Here</Link>
-                    <Link to="/register" className="auth-buttons" id="sup">Register with Us</Link>
-                </div>
-            </section>
-            </div>
-        </Fragment>
-        
-    );
-
-
-export default PersonData;
+export default Person;
